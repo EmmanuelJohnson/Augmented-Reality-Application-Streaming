@@ -12,7 +12,7 @@ def main():
   elif platform.system() == "Linux":
     head = os.popen("which emulator").read().strip("\n")
     kvm = " -qemu -enable-kvm"
-  cmd = head + " -avd simulate -camera-back webcam0" + kvm + tail
+  cmd = head + " -avd simulate" + kvm + tail
   print cmd
   os.system(cmd)
   time.sleep(2)
