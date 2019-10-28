@@ -11,10 +11,14 @@ def authenticate(telnet, userName):
 		print "Authenticating the user"
 		authFile = open('/Users/'+userName+'/.emulator_console_auth_token', 'r')
 		getAuth = authFile.read()
-		authenticate = "auth " + getAuth +"\n"
+		telnet.write("\n")
+		authenticate = "auth " + getAuth
 		telnet.write(authenticate)
+		time.sleep(1)
+		telnet.write("\n")
 		print "User Authenticated"
-	except:
+	except Exception as e:
+		print (e)
 		print "Error in Authenticating"
 
 import csv
@@ -59,9 +63,13 @@ def simulate(telnet, simulationValues):
 			print "Executing "
 			print data
 			accelValues = str(float(data['accX']))+":"+str(float(data['accY']))+":"+str(float(data['accZ']))
-			telnet.write("sensor set acceleration "+accelValues+"\n")
+			telnet.write("\n")
+			telnet.write("sensor set acceleration "+accelValues)
+			telnet.write("\n")
 			gyroValues = str(float(data['gyroX']))+":"+str(float(data['gyroY']))+":"+str(float(data['gyroZ']))
-			telnet.write("sensor set gyroscope "+gyroValues+"\n")
+			telnet.write("sensor set gyroscope "+gyroValues)
+			telnet.write("\n")
+			telnet.write("sensor set gyroscope 0:0:0")
 			time.sleep(0.1)
 	except KeyboardInterrupt:
 		print "Exiting"
@@ -85,7 +93,8 @@ def main():
 	simulate(tn, simulationValues)
 
 	print "Exiting Simulation"
-	tn.write("exit\n")
+	tn.write("\n")
+	tn.write("exit")
 
 if __name__ == "__main__":
   main()
