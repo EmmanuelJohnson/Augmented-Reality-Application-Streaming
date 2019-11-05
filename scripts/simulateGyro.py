@@ -60,8 +60,8 @@ def simulate(telnet, simulationValues):
 		s = 0
 		while s < total:
 			data = simulationValues[s]
-			print "Executing "
-			print data
+			# print "Executing "
+			# print data
 			accelValues = str(float(data['accX']))+":"+str(float(data['accY']))+":"+str(float(data['accZ']))
 			telnet.write("\n")
 			telnet.write("sensor set acceleration "+accelValues)
