@@ -1,0 +1,3 @@
+[submodule "Python Sensor Server and Simulator/PhonePiAndroidApp"]
+	path = Python Sensor Server and Simulator/PhonePiAndroidApp
+	url = https://github.com/priyankark/PhonePiAndroidApp.git
