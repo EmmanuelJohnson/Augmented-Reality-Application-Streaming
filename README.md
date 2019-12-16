@@ -1,6 +1,6 @@
 # Augmented-Reality-Application-Streaming
 
-Project to offload augmented reality processing to a remote machine, from an Android device. Please read [Report.pdf](https://github.com/EmmanuelJohnson/Augmented-Reality-Application-Streaming/master/Report.pdf) for details.
+Project to offload augmented reality processing to a remote machine, from an Android device. Please read [Report.pdf](https://github.com/EmmanuelJohnson/Augmented-Reality-Application-Streaming/blob/master/Report.pdf) for details.
 
 ## Setup
 
